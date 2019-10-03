@@ -64,7 +64,8 @@
     "release-notes:lib": "ts-node ./scripts/changelog.ts --verbose --lib storefront",
     "release-notes:core": "ts-node ./scripts/changelog.ts --verbose --lib core",
     "release-notes:styles": "ts-node ./scripts/changelog.ts --verbose --lib styles",
-    "release-notes:schematics": "ts-node ./scripts/changelog.ts --verbose --lib schematics"
+    "release-notes:schematics": "ts-node ./scripts/changelog.ts --verbose --lib schematics",
+    "publish:docs": "cd scripts && ./publish-docs.sh"
   },
   "private": false,
   "dependencies": {
