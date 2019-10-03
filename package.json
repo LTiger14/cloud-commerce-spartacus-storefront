@@ -65,7 +65,7 @@
     "release-notes:core": "ts-node ./scripts/changelog.ts --verbose --lib core",
     "release-notes:styles": "ts-node ./scripts/changelog.ts --verbose --lib styles",
     "release-notes:schematics": "ts-node ./scripts/changelog.ts --verbose --lib schematics",
-    "publish:docs": "cd scripts && ./publish-docs.sh"
+    "publish:docs": "gh-pages -d documentation -m 'Compodocs updates'"
   },
   "private": false,
   "dependencies": {
@@ -118,6 +118,7 @@
     "ejs": "^2.6.2",
     "faker": "^4.1.0",
     "gh-got": "^8.0.1",
+    "gh-pages": "^2.1.1",
     "git-raw-commits": "^2.0.0",
     "http-server": "^0.11.1",
     "i18n-lint": "^1.0.0",
