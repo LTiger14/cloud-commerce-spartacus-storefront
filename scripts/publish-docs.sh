@@ -1,9 +1,18 @@
-echo "------------------------------------"
-echo "Publishing Compodocs to Github Pages"
+#!/usr/bin/env bash
+set -e
 
-pushd ..
-git subtree push --prefix documentation origin gh-pages
-
-echo ""
-echo "------------------------------------"
-echo "Compodocs published to Github Pages"
+echo 'bulid client ...'
+npm run build:client
+echo 'check out branch gh-pages ...'
+git checkout -b gh-pages
+echo 'add client-dist folder'
+git add -f client-dist
+echo 'commit changes'
+git commit -m "deploy to gh-pages"
+echo 'push to remote gh-pages'
+git push origin `git subtree split --prefix client-dist`:gh-pages --force
+echo 'checkout branch master'
+git checkout master
+echo 'delete branch gh-pages'
+git branch -D gh-pages
+echo All done!
